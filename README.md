@@ -10,6 +10,24 @@ According to the WHO, **1 in 5 hospital visitors** struggle with navigation due 
 
 ---
 
+## 🧩 What MedNav Is
+
+**MedNav is a platform, not a single-hospital app.** Think of it like Shopify for hospital wayfinding: we built the engine, any hospital can plug in their floor plan.
+
+The product has two parts:
+
+**1. The Engine (what we sell)**  
+The React app, the Dijkstra pathfinding algorithm with accessibility-aware graph modification, the 6-language i18n system, the sign language phrase library, the dark mode theme system, and the patient flow logic. This is layout-agnostic — it works on any hospital.
+
+**2. The Data Layer (what hospitals provide)**  
+Each hospital provides their floor plan data: rooms with coordinates, corridors with accessibility properties (stairs, width), and floor numbers. This maps directly to our `ROOMS` and `EDGES` data structures. Once provided, all features — pathfinding, accessibility, multilingual support, sign language — work automatically on the new layout.
+
+The hospital shown in our demo is a realistic 5-floor, 55-room example we built to prove the platform handles every major hospital department type (Emergency, OPD, Diagnostics, IPD, Surgery, ICU). In production, the first thing we'd do with a pilot hospital is translate their real floor plan into our data format — a process that takes a hospital admin about a day with our admin tool.
+
+**Why a platform approach?** 164,000+ hospitals worldwide need accessible wayfinding. A single-hospital app doesn't scale. A platform that any hospital can adopt does.
+
+---
+
 ## ✨ Features
 
 - 🗺️ **Multi-floor Dijkstra pathfinding** — 5 floors, 55+ rooms, 100+ corridors covering Emergency, OPD, Diagnostics, IPD wards, Surgery, and ICU
