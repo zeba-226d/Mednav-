@@ -330,7 +330,7 @@ export default function MedNav(){
       <div style={{fontSize:64,marginBottom:20}}>{p.emoji}</div>
       <div style={{fontSize:36,fontWeight:800,textAlign:"center",color:CCOL[p.cat],marginBottom:12}}>{p.text[lang]||p.text.en}</div>
       <div style={{fontSize:24,color:"#6B7280",textAlign:"center"}}>{p.text.en}</div>
-      <div style={{marginTop:32,padding:"8px 16px",background:cbg[p.cat],borderRadius:20,color:CCOL[p.cat],fontWeight:700,fontSize:14,textTransform:"uppercase"}}>{p.cat}</div>
+      <div style={{marginTop:32,padding:"8px 16px",background:CBG_[p.cat],borderRadius:20,color:CCOL[p.cat],fontWeight:700,fontSize:14,textTransform:"uppercase"}}>{p.cat}</div>
       <button onClick={()=>setShowStaff(null)} style={{marginTop:40,padding:"14px 40px",background:c.ac,color:"#fff",border:"none",borderRadius:14,fontSize:18,fontWeight:700,cursor:"pointer"}}>✕ Close</button>
     </div>
   )}
@@ -479,7 +479,7 @@ export default function MedNav(){
               <div style={{fontSize:base-2,color:c.tx,lineHeight:1.6,marginBottom:10}}>{gest}</div>
               <button onClick={e=>{e.stopPropagation();setShowStaff(p.id)}} style={{width:"100%",padding:10,background:CCOL[p.cat],color:"#fff",border:"none",borderRadius:10,fontWeight:700,fontSize:base-1,cursor:"pointer"}}>📋 {t.showTo}</button>
             </div>}
-            {!open&&<div style={{display:"flex",alignItems:"center",gap:4,marginTop:8,color:p.cat==="urgent"?c.red:c.ac,fontSize:base-2,fontWeight:600}}><span style={{width:18,height:18,borderRadius:"50%",background:cbg[p.cat],display:"flex",alignItems:"center",justifyContent:"center",fontSize:8}}>{p.cat==="urgent"?"🔴":"🔵"}</span>{p.cat==="urgent"?t.criticalSign:t.viewDemo}</div>}
+            {!open&&<div style={{display:"flex",alignItems:"center",gap:4,marginTop:8,color:p.cat==="urgent"?c.red:c.ac,fontSize:base-2,fontWeight:600}}><span style={{width:18,height:18,borderRadius:"50%",background:CBG_[p.cat],display:"flex",alignItems:"center",justifyContent:"center",fontSize:8}}>{p.cat==="urgent"?"🔴":"🔵"}</span>{p.cat==="urgent"?t.criticalSign:t.viewDemo}</div>}
           </div>})}</div>
         </div>}
 
