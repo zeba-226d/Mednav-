@@ -336,7 +336,7 @@ export default function MedNav(){
   )}
 
   return(
-    <div dir={isRTL?"rtl":"ltr"} style={{fontFamily:"'DM Sans',system-ui,sans-serif",background:c.bg,color:c.tx,minHeight:"100vh",fontSize:base,lineHeight:1.5,display:"flex",flexDirection:"column",maxWidth:480,margin:"0 auto",position:"relative"}}>
+    <div dir={isRTL?"rtl":"ltr"} style={{fontFamily:"'DM Sans',system-ui,sans-serif",background:c.bg,color:c.tx,height:"100dvh",fontSize:base,lineHeight:1.5,display:"flex",flexDirection:"column",maxWidth:480,margin:"0 auto",position:"relative",overflow:"hidden"}}>
       <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&display=swap" rel="stylesheet"/>
       <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.fi{animation:fadeIn .3s ease both}input::placeholder{color:#9CA3AF}select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%236B7280' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}button:active{transform:scale(.97)}::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:#D1D5DB;border-radius:10px}`}</style>
 
@@ -504,7 +504,7 @@ export default function MedNav(){
       </div>
 
       {/* BOTTOM TAB */}
-      <div style={{position:"fixed",bottom:0,left:"50%",transform:"translateX(-50%)",width:"100%",maxWidth:480,background:c.w,borderTop:`1px solid ${c.bd}`,display:"flex",padding:"5px 0 env(safe-area-inset-bottom, 6px)",zIndex:50}}>
+      <div style={{position:"absolute",bottom:0,left:0,right:0,background:c.w,borderTop:`1px solid ${c.bd}`,display:"flex",padding:"5px 0 env(safe-area-inset-bottom, 6px)",zIndex:50}}>
         {[{id:"home",i:"🏠",l:t.home},{id:"navigate",i:"🧭",l:t.navigate},{id:"phrases",i:"🤟",l:t.phrases},{id:"settings",i:"⚙️",l:t.settings}].map(item=><button key={item.id} onClick={()=>setTab(item.id)} style={{flex:1,display:"flex",flexDirection:"column",alignItems:"center",gap:1,padding:"7px 0",border:"none",cursor:"pointer",background:tab===item.id?c.acL:"transparent",borderRadius:tab===item.id?10:0,margin:tab===item.id?"0 3px":0}}><span style={{fontSize:18}}>{item.i}</span><span style={{fontSize:9,fontWeight:tab===item.id?700:500,color:tab===item.id?c.ac:c.tx2}}>{item.l}</span></button>)}
       </div>
     </div>
