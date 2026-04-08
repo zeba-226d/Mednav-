@@ -350,7 +350,7 @@ export default function MedNav(){
       </div>
       {langOpen&&<div style={{position:"absolute",top:52,right:16,zIndex:100,background:c.w,border:`1px solid ${c.bd}`,borderRadius:12,boxShadow:c.shM,padding:6,minWidth:170}} className="fi">{Object.entries(LANGS).map(([code,info])=><button key={code} onClick={()=>{setLang(code);setLangOpen(false)}} style={{display:"flex",alignItems:"center",gap:10,width:"100%",padding:"9px 12px",border:"none",background:lang===code?c.acL:"transparent",borderRadius:8,cursor:"pointer",fontSize:base,fontWeight:lang===code?700:400,color:lang===code?c.ac:c.tx}}><span style={{fontSize:18}}>{info.flag}</span>{info.name}{lang===code&&<span style={{marginLeft:"auto",color:c.ac}}>✓</span>}</button>)}</div>}
 
-      <div style={{flex:1,overflowY:"auto",paddingBottom:80}}>
+      <div style={{flex:1,overflowY:"auto",paddingBottom:"calc(80px + env(safe-area-inset-bottom, 0px))",overflowX:"hidden",WebkitOverflowScrolling:"touch"}}>
 
         {/* ═══ HOME ═══ */}
         {tab==="home"&&<div className="fi">
