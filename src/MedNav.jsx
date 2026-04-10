@@ -311,7 +311,7 @@ export default function MedNav(){
   const reset=()=>{setRoute(null);setStp(-1);setEndRoom("")};
   const dirs=useMemo(()=>route?genDirs(route.path,lang,acc.cognitive,t):[],[route,lang,acc.cognitive,t]);
   useEffect(()=>{if(stepsRef.current&&stp>=0){const el=stepsRef.current.children[stp];if(el)el.scrollIntoView({behavior:"smooth",block:"nearest"})}},[stp]);
-  useEffect(()=>{if(dirs[stp]){const rm=ROOMS[dirs[stp].roomId];if(rm)setMapFloor(rm.floor)}},[stp,dirs]);
+  useEffect(()=>{if(dirs[stp]){const rm=ROOMS[dirs[stp].roomId];if(rm)setMapFloor(rm.floor);if((acc.vision||acc.hearing)&&typeof window!=="undefined"&&window.speechSynthesis){window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(dirs[stp].text.replace(/[↑↓←→↗↘↖↙🔀]/g,"").trim());u.lang={en:"en-US",ar:"ar-SA",es:"es-ES",zh:"zh-CN",hi:"hi-IN",fr:"fr-FR"}[lang]||"en-US";u.rate=0.9;window.speechSynthesis.speak(u)}}},[stp,dirs,acc.vision,acc.hearing,lang]);
   const phrases=useMemo(()=>{let l=PHRASES;if(filter!=="all")l=l.filter(p=>p.cat===filter);if(search.trim()){const q=search.toLowerCase();l=l.filter(p=>(p.text[lang]||p.text.en).toLowerCase().includes(q)||p.text.en.toLowerCase().includes(q))}return l},[filter,search,lang]);
 
   // Quick nav to department
