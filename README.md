@@ -1,3 +1,4 @@
+<img width="474" height="713" alt="Screenshot 2026-08-31 at 8 14 20 am" src="https://github.com/user-attachments/assets/2d67bcb7-93e6-4df4-a3a8-bcd7eaed5e5d" />
 # 🏥 MedNav
 
 > **Navigate with confidence. Communicate without barriers.**
